@@ -1,3 +1,15 @@
+/*css variables*/
+:root {
+    --bodyBackgroundColor: rgb(20, 30, 40);
+    --bodyColor: linen;
+    --headingColor: orangered;
+    --hoverColor: #306203;
+    --dateColor: rgba(255, 255, 255, 0.5);
+    --quoteColor: #00beef;
+    --borderColor: rgba(120, 120, 120, 0.6);
+}
+
+/*reset*/
 *,
 ::before,
 ::after {
@@ -12,10 +24,11 @@ html {
 
 body {
     font-family: 'Baskervville', serif;
-    color: linen;
-    background-color: rgb(20, 30, 40);
+    color: var(--bodyColor);
+    background-color: var(--bodyBackgroundColor);
 }
 
+/*text style*/
 h1 {
     font-family: 'Anton', sans-serif;
 }
@@ -30,9 +43,11 @@ h6 {
 
 a {
     text-decoration: none;
-    color: linen;
+    color: var(--bodyColor);
 }
 
+
+/*main element*/
 main {
     display: grid;
     grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
@@ -46,9 +61,10 @@ img {
 
 hr {
     margin: 1.5rem 0;
-    border: 1px solid rgba(120, 120, 120, 0.6);
+    border: 1px solid var(--borderColor);
 }
 
+/*heading section*/
 .heading {
     grid-column: 2 / 3;
     display: grid;
@@ -56,6 +72,8 @@ hr {
     row-gap: 1.5rem;
 }
 
+
+/*.text sections*/
 .text {
     grid-column: 2 / 3;
     font-size: 1.8rem;
@@ -64,6 +82,7 @@ hr {
     text-align: justify;
 }
 
+/*heading child*/
 .hero {
     grid-column: 1 / -1;
     position: relative;
@@ -71,13 +90,13 @@ hr {
 
 .hero-title {
     text-align: center;
-    color: orangered;
+    color: var(--headingColor);
     font-size: 8rem;
 }
 
 .hero-subtitle {
     font-size: 2.4rem;
-    color: orangered;
+    color: var(--headingColor);
     text-align: center;
 }
 
@@ -87,11 +106,11 @@ hr {
 }
 
 .author-name a:hover {
-    background-color: #306203;
+    background-color: var(--hoverColor);
 }
 
 .publish-date {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--dateColor); 
 }
 
 .social-icons {
@@ -103,15 +122,16 @@ hr {
     align-items: center;
 }
 
+/*.text*/
 .first-paragraph::first-letter {
     font-size: 6rem;
-    color: orangered;
+    color: var(--headingColor);
     float: left;
     margin-right: 1rem;
 }
 
 .quote {
-    color: #00beef;
+    color: var(--quoteColor);
     font-size: 2.4rem;
     text-align: center;
     font-family: "Raleway", sans-serif;
@@ -125,6 +145,7 @@ hr {
     content: ' "';
 }
 
+/*.text-with-images*/
 .text-with-images {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -143,7 +164,7 @@ hr {
 
 .list-title,
 .list-subtitle {
-    color: #00beef;
+    color: var(--quoteColor);
 }
 
 .image-wrapper {
@@ -159,6 +180,8 @@ hr {
     grid-column: 1 / -1;
 }
 
+
+/*media queries*/
 @media only screen and (max-width: 720px) {
     .image-wrapper {
         grid-template-columns: 1fr;
